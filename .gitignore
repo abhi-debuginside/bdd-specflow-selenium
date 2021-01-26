@@ -1,9 +1,7 @@
 ﻿################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
-
-/SampleCalculator.API/.vs/*
-/SampleCalculator.API/bin/*
-/SampleCalculator.API/obj
-/SampleCalculator.Test/bin/*
-/SampleCalculator.Test/obj/*
+/.vs/*
+/Weather.API/obj/*
+/WeatherApp.Automation.Test/bin/*
+/WeatherApp.Automation.Test/obj/*
