@@ -2,6 +2,5 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 /.vs/*
-/Weather.API/obj/*
-/WeatherApp.Automation.Test/bin/*
-/WeatherApp.Automation.Test/obj/*
+*/obj/*
+*/bin/*
