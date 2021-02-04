@@ -9,7 +9,7 @@ namespace WeatherApp.Automation.Test
 {
     public class UnitTest1
     {
-        [Fact]
+        //[Fact]
         public async Task Test1()
         {
             // arrange
@@ -30,7 +30,8 @@ namespace WeatherApp.Automation.Test
            
             double.TryParse(actualTempartureText, out actualTemparture);
           
-            var apiData = await apiManager.GetWeatherDataByCity(city, state);
+            await apiManager.GetWeatherDataByCity(city, state);
+            var apiData = apiManager.ApiResponse;
 
 
             // assert

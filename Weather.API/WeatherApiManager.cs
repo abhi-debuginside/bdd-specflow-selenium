@@ -5,21 +5,24 @@ using Weather.API.Models;
 
 namespace Weather.API
 {
-    public class WeatherApiManager: BaseApiManager
+    public class WeatherApiManager : BaseApiManager
     {
         private readonly RestClient _restClient;
+
+        public WeatherApiResponseModel ApiResponse { get; private set; }
+        public double Temperature => ApiResponse.Main.Temp;
 
         public WeatherApiManager()
         {
             _restClient = new RestClient(BaseApiUrl);
         }
 
-        public async Task<WeatherApiResponseModel> GetWeatherDataByCity(string city, string state)
+        public async Task GetWeatherDataByCity(string city, string state, string unit = "metric")
         {
             //api.openweathermap.org/data/2.5/weather?q={city name},{state code},{country code}&appid={API key}            
             var request = new RestRequest("weather", Method.GET);
             request.AddParameter("appid", ApiKey);
-            request.AddParameter("units", "metric");
+            request.AddParameter("units", unit);
             request.AddParameter("q", $"{city},{state}");
 
             var response = await _restClient.ExecuteAsync<WeatherApiResponseModel>(request);
@@ -27,7 +30,8 @@ namespace Weather.API
             {
                 throw new Exception("Api call failed");
             }
-            return response.Data;
+
+            ApiResponse = response.Data;
         }
     }
     public abstract class BaseApiManager
