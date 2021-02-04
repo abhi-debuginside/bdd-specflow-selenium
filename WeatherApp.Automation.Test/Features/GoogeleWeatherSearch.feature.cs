@@ -87,6 +87,7 @@ namespace WeatherApp.Automation.Test.Features
             "s.")]
         [Xunit.InlineDataAttribute("\'Kochi\'", "\'Kerala\'", "\'metric\'", new string[0])]
         [Xunit.InlineDataAttribute("\'Thiruvananthapuram\'", "\'Kerala\'", "\'metric\'", new string[0])]
+        [Xunit.InlineDataAttribute("\'Manali\'", "\'Himachal Pradesh\'", "\'metric\'", new string[0])]
         public virtual void AsAUserIShouldVerifyTheWeatherInGoogleSearchForAParticularLocations_(string city, string state, string unit, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;

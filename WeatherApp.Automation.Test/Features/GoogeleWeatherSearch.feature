@@ -10,3 +10,4 @@ Scenario Outline: As a User, I should verify the weather in google search for a 
 	| city       | state                | unit     |
 	| 'Kochi'    | 'Kerala'             | 'metric' |
 	| 'Thiruvananthapuram'   | 'Kerala'   | 'metric' |
+	| 'Manali'   | 'Himachal Pradesh'   | 'metric' |
